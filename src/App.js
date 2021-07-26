@@ -1,9 +1,12 @@
+import NavigationBar from '../NavigationBar';
+import ItemList from '../ItemList';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <hi>hello</hi>
+      <NavigationBar/>
+      <ItemList/>
     </div>
   );
 }
