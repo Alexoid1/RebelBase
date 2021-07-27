@@ -22,7 +22,8 @@ function ItemList() {
                         <div>
                             <BsCircleFill  className="iconCircle"/>
                         </div>
-                        <div>
+                        <div className="cardBox">
+                            <h4 className="fontStyle">Problem</h4>
 
                         </div>
                         <div></div>
