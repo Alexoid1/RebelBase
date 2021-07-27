@@ -1,5 +1,6 @@
-import NavigationBar from '../NavigationBar';
-import ItemList from '../ItemList';
+import React from 'react';
+import NavigationBar from './components/NavigationBar';
+import ItemList from './components/ItemList';
 import './App.css';
 
 function App() {
