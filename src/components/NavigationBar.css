@@ -1,13 +1,23 @@
 .navigationBar {
     background: white;
-    width: 290px;
+    width: 225px;
 }
 
 ul {
     list-style: none;
+    margin-top: 90px;
+    padding: 0;
+}
+
+ul li {
+    text-align: center;
 }
 
 ul li button {
-    height: 50px;
+    height: 40px;
     background: rgb(232,233,233);
+    border: none;
+    width: 165px;
+    text-align: left;
+    font-size: 15px;
 }

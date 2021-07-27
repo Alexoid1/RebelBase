@@ -8,7 +8,7 @@ function NavigationBar() {
             <ul>
               <li>
                 <button type="button">
-                  sdfg
+                  All
                 </button>
               </li>
             </ul>
