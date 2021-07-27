@@ -4,7 +4,15 @@ import './NavigationBar.css'
 function NavigationBar() {
     return (
       <div className="navigationBar">
-          sdfsd
+          <nav>
+            <ul>
+              <li>
+                <button type="button">
+                  sdfg
+                </button>
+              </li>
+            </ul>
+          </nav>
       </div>
     );
 }

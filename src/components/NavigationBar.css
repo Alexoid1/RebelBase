@@ -1,4 +1,12 @@
 .navigationBar {
-    background: brown;
+    background: white;
     width: 290px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li button {
+    
 }
