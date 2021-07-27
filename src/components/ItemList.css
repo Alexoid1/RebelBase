@@ -20,6 +20,7 @@
     width: 775px;
     height: 100%;
     border: 2px solid rgb(241,242,242);
+
 }
 
 .inovation {
@@ -34,6 +35,7 @@
     display: flex;
     display: row;
     align-items: center;
+    
 }
 
 .iconList {
@@ -63,12 +65,61 @@
     width: 300px;
     border: 2px solid #A9ECF3;
     border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgba(181, 179, 179, 0.72);
 }
 
-.cardBox h4 {
+.cardBox div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardBox div h4 {
     font-size: 14px;
     color: rgb(95,114,115);
     text-align: left;
     font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: 2px;
+    font-weight: medium;
+    margin: 10px 13px;
 }
 
+.viewLink {
+    font-size: 12px;
+    color: rgb(0, 145, 255);
+    text-align: left;
+    margin-left: 20px;
+}
+
+.greyBox {
+    background: rgb(232,232,232);
+    height: 48px;
+    width: 73px;
+    margin-right: 15px;
+}
+
+.dateContainer {
+    margin-left: 127px;
+}
+
+.dateContainer .date {
+    width: 111px;
+    height: 27px;
+    border: 2px solid rgb(238,238,238);
+}
+
+.dateContainer .hour {
+    width: 83px;
+    height: 27px;
+    border: 2px solid rgb(238,238,238);
+    margin-left: 3px;
+}
+
+
+.date::-webkit-inner-spin-button {
+  width: 10px;
+}

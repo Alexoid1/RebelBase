@@ -17,16 +17,22 @@ function ItemList() {
                     <div className="item">
                         <div>
                             <BsList  className="iconList"/>
-                            
                         </div>
                         <div>
                             <BsCircleFill  className="iconCircle"/>
                         </div>
                         <div className="cardBox">
-                            <h4 className="fontStyle">Problem</h4>
-
+                            <div>
+                                    <h4>Problem</h4>
+                                    <p className="viewLink">view builder</p>
+                                 
+                            </div>
+                            <div className="greyBox"></div>
                         </div>
-                        <div></div>
+                        <div className="dateContainer">
+                            <input className="date" placeholder="MM-DD-YYY" type="date"></input>
+                            <input className="hour" type="time"></input>
+                        </div>
 
                     </div>
                     <div className="item">
