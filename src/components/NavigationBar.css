@@ -1,6 +1,6 @@
 .navigationBar {
     background: white;
-    width: 225px;
+    width: 220px;
 }
 
 ul {
@@ -9,15 +9,29 @@ ul {
     padding: 0;
 }
 
-ul li {
+.navul li {
     text-align: center;
 }
 
-ul li button {
+.all {
     height: 40px;
-    background: rgb(232,233,233);
+    background: rgb(225, 225, 225);
     border: none;
     width: 165px;
     text-align: left;
     font-size: 15px;
+}
+
+.temple {
+    color:rgb(205,204,205);
+    font-size: 15px;
+    margin: 0 0 0 30px;
+    text-align: left;
+}
+
+.social {
+    border: none;
+    background: none;
+    margin-top: 15px;
+    font-size: 17px;
 }
