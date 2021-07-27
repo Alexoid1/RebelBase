@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsList, BsCircleFill } from 'react-icons/bs';
 import './ItemList.css' 
 
 function ItemList() {
@@ -14,6 +15,17 @@ function ItemList() {
                
                 <div>
                     <div className="item">
+                        <div>
+                            <BsList  className="iconList"/>
+                            
+                        </div>
+                        <div>
+                            <BsCircleFill  className="iconCircle"/>
+                        </div>
+                        <div>
+
+                        </div>
+                        <div></div>
 
                     </div>
                     <div className="item">

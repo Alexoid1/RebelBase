@@ -32,4 +32,25 @@
     height: 75px;
     border: 1px solid black;
     margin-bottom: 32px;
+    display: flex;
+    display: row;
+    align-items: center;
+}
+
+.iconList {
+    color: rgb(213, 213, 216);
+    font-size: 30px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.iconList:hover {
+    color: cadetblue;
+}
+
+.iconCircle {
+    font-size: 20px;
+    text-align: left;
+    margin: 0 30px;
+    color: rgb(15, 160, 160);
 }
