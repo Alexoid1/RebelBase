@@ -2,7 +2,33 @@ import React from 'react';
 import { BsList, BsCircleFill } from 'react-icons/bs';
 import './ItemList.css' 
 
+
 function ItemList() {
+
+const items=[
+    {
+        name:"Problem",
+        categoty: "Ideation"
+    },
+    {
+        name:"Solution",
+        categoty: "Ideation"
+    },
+    {
+        name:"Team",
+        categoty: "Ideation"
+    },
+    {
+        name:"Ecosystem",
+        categoty: "Validation"
+    },
+    {
+        name:"Results",
+        categoty: "Validation"
+    }
+
+
+]
     return (
 
     <div className="itemContainer">
