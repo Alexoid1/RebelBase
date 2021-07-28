@@ -4,6 +4,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './ItemList.css' 
 
 
+
 const items=[
     {
         name:"Problem",
@@ -29,6 +30,14 @@ const items=[
 
 ]
 
+const reorder=(list,startIndex, endIndex)=>{
+    const result=[...list];
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex,0,removed);
+    return result
+
+}
+
 function ItemList() {
     const[itemss,setItems]=useState(items)
 
@@ -41,7 +50,19 @@ function ItemList() {
                 <div>
                     <h3 className="inovation fontStyle">Social Innovation</h3>
                 </div>
-                <DragDropContext>
+                <DragDropContext onDragEnd={(result)=>{
+                    const {source, destination}=result;
+                    if(!destination){
+                        return;
+                    }
+                    if(source.index===destination.index&&source.droppableId===destination.droppableId){
+                        return;
+                    }
+                    setItems((prevItems)=>{
+                        return reorder(prevItems,source.index,destination.index)
+                    })
+
+                }}>
                     <Droppable droppableId="items">{(droppableProvided)=>(
 
                             <div {...droppableProvided.droppableProps} ref={droppableProvided.innerRef}>
@@ -55,7 +76,10 @@ function ItemList() {
                                                         <BsList  className="iconList"/>
                                                     </div>
                                                     <div>
-                                                        <BsCircleFill  className="iconCircle"/>
+                                                        <label className="containerC">
+                                                            <input type="checkbox" />
+                                                            <span className="checkmark"/>
+                                                        </label>
                                                     </div>
                                                     <div className="cardBox">
                                                         <div>
