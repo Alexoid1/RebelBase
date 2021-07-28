@@ -1,6 +1,7 @@
-import {useState} from 'react';
-import { BsList, BsCircleFill } from 'react-icons/bs';
+import {useState,React} from 'react';
+import { BsList } from 'react-icons/bs';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import DateContainer from './DateContainer'
 import './ItemList.css' 
 
 
@@ -57,21 +58,29 @@ const reorder=(list,startIndex, endIndex)=>{
 function ItemList() {
     const[itemss,setItems]=useState(items);
    
+   
+   
     const handleChangeCheckState=(e,index)=>{
         let currentItems=itemss
-        if(e.target.value==='on'){
+        console.log(currentItems[index].checked)
+        if(e.target.checked){
             currentItems[index].checked=true
             setItems(currentItems)
-            console.log(currentItems,e.target.value)
-        }else if(e.target.value==='off'){
-                currentItems[index].checked=e.target.value
+            
+            
+         
+          
+        }else if(e.target.checked===false){
+                currentItems[index].checked=false
             setItems(currentItems)
-            console.log(currentItems,e.target.value)
+            
+           
+           
         }
         
 
        
-    }
+    };
 
     return (
 
@@ -109,7 +118,7 @@ function ItemList() {
                                                     </div>
                                                     <div>
                                                         <label className="containerC">
-                                                            <input type="checkbox" onChange={(e)=>
+                                                            <input type="checkbox" onClick={(e)=>
                                                                 handleChangeCheckState(e,index)}/>
 
                                                             <span className={'checkmark '+(item.checked?'chekedtrue':'chekedfalse')} />
@@ -122,11 +131,11 @@ function ItemList() {
                                                             
                                                         </div>
                                                         <div className="greyBox"></div>
+                                                        
                                                     </div>
-                                                    <div className="dateContainer">
-                                                        <input className="date" placeholder="MM-DD-YYY" type="date"></input>
-                                                        <input className="hour" type="time"></input>
-                                                    </div>
+                                                    <DateContainer checked={item.checked} />
+                                                    
+                                                    
                                                 
                                             </div>
                                         )}

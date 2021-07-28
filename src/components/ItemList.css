@@ -102,31 +102,7 @@
     margin-right: 15px;
 }
 
-.dateContainer {
-    margin-left: 127px;
-}
 
-.dateContainer .date {
-    width: 111px;
-    height: 27px;
-    border: 2px solid rgb(238,238,238);
-}
-
-.dateContainer .hour {
-    width: 83px;
-    height: 27px;
-    border: 2px solid rgb(238,238,238);
-    margin-left: 3px;
-}
-
-
-.date::-webkit-inner-spin-button {
-  width: 10px;
-}
-
-.msg {
-
-}
 
 .containerC {
     display: block;
@@ -171,4 +147,4 @@
 .chekedtrue {
     background-color: #2196F3;
 }
-  
+
