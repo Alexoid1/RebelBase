@@ -1,34 +1,37 @@
-import React from 'react';
+import {useState} from 'react';
 import { BsList, BsCircleFill } from 'react-icons/bs';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './ItemList.css' 
 
-
-function ItemList() {
 
 const items=[
     {
         name:"Problem",
-        categoty: "Ideation"
+        category: "Ideation"
     },
     {
         name:"Solution",
-        categoty: "Ideation"
+        category: "Ideation"
     },
     {
         name:"Team",
-        categoty: "Ideation"
+        category: "Ideation"
     },
     {
         name:"Ecosystem",
-        categoty: "Validation"
+        category: "Validation"
     },
     {
         name:"Results",
-        categoty: "Validation"
+        category: "Validation"
     }
 
 
 ]
+
+function ItemList() {
+    const[itemss,setItems]=useState(items)
+
     return (
 
     <div className="itemContainer">
@@ -38,36 +41,45 @@ const items=[
                 <div>
                     <h3 className="inovation fontStyle">Social Innovation</h3>
                 </div>
-               
-                <div>
-                    <div className="item">
-                        <div>
-                            <BsList  className="iconList"/>
-                        </div>
-                        <div>
-                            <BsCircleFill  className="iconCircle"/>
-                        </div>
-                        <div className="cardBox">
-                            <div>
-                                    <h4>Problem</h4>
-                                    <p className="viewLink">view builder</p>
-                                 
-                            </div>
-                            <div className="greyBox"></div>
-                        </div>
-                        <div className="dateContainer">
-                            <input className="date" placeholder="MM-DD-YYY" type="date"></input>
-                            <input className="hour" type="time"></input>
-                        </div>
+                <DragDropContext>
+                    <Droppable droppableId="items">{(droppableProvided)=>(
 
-                    </div>
-                    <div className="item">
-
-                    </div>
-                    <div className="item">
-
-                    </div>
-                </div>
+                            <div {...droppableProvided.droppableProps} ref={droppableProvided.innerRef}>
+                        
+                                
+                                {itemss.map((item,index)=>(
+                                    <Draggable key={item.name+index} draggableId={item.name} index={index}>
+                                        {(draggableProvided)=>(
+                                            <div {...draggableProvided.draggableProps} ref={draggableProvided.innerRef} {...draggableProvided.dragHandleProps} className="item" >
+                                                    <div>
+                                                        <BsList  className="iconList"/>
+                                                    </div>
+                                                    <div>
+                                                        <BsCircleFill  className="iconCircle"/>
+                                                    </div>
+                                                    <div className="cardBox">
+                                                        <div>
+                                                                <h4>{item.name}</h4>
+                                                                <p className="viewLink">view builder</p>
+                                                            
+                                                        </div>
+                                                        <div className="greyBox"></div>
+                                                    </div>
+                                                    <div className="dateContainer">
+                                                        <input className="date" placeholder="MM-DD-YYY" type="date"></input>
+                                                        <input className="hour" type="time"></input>
+                                                    </div>
+                                                
+                                            </div>
+                                        )}
+                                    </Draggable>
+                                    
+                                ))}
+                                {droppableProvided.placeholder}
+                            </div>)}
+                    </Droppable>
+                </DragDropContext>    
+                
             </div>  
 
         </div>
