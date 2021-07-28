@@ -5,26 +5,42 @@ import './ItemList.css'
 
 
 
-const items=[
+let items=[
     {
         name:"Problem",
-        category: "Ideation"
+        category: "Ideation",
+        checked:false,
+        date:'00-00-00',
+        time:'00:00'
+
     },
     {
         name:"Solution",
-        category: "Ideation"
+        category: "Ideation",
+        checked:false,
+        date:'00-00-00',
+        time:'00:00'
     },
     {
         name:"Team",
-        category: "Ideation"
+        category: "Ideation",
+        checked:false,
+        date:'00-00-00',
+        time:'00:00'
     },
     {
         name:"Ecosystem",
-        category: "Validation"
+        category: "Validation",
+        checked:false,
+        date:'00-00-00',
+        time:'00:00'
     },
     {
         name:"Results",
-        category: "Validation"
+        category: "Validation",
+        checked:false,
+        date:'00-00-00',
+        time:'00:00'
     }
 
 
@@ -39,7 +55,23 @@ const reorder=(list,startIndex, endIndex)=>{
 }
 
 function ItemList() {
-    const[itemss,setItems]=useState(items)
+    const[itemss,setItems]=useState(items);
+   
+    const handleChangeCheckState=(e,index)=>{
+        let currentItems=itemss
+        if(e.target.value==='on'){
+            currentItems[index].checked=true
+            setItems(currentItems)
+            console.log(currentItems,e.target.value)
+        }else if(e.target.value==='off'){
+                currentItems[index].checked=e.target.value
+            setItems(currentItems)
+            console.log(currentItems,e.target.value)
+        }
+        
+
+       
+    }
 
     return (
 
@@ -77,8 +109,10 @@ function ItemList() {
                                                     </div>
                                                     <div>
                                                         <label className="containerC">
-                                                            <input type="checkbox" />
-                                                            <span className="checkmark"/>
+                                                            <input type="checkbox" onChange={(e)=>
+                                                                handleChangeCheckState(e,index)}/>
+
+                                                            <span className={'checkmark '+(item.checked?'chekedtrue':'chekedfalse')} />
                                                         </label>
                                                     </div>
                                                     <div className="cardBox">

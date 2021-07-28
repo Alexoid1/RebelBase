@@ -138,17 +138,17 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
+}
   
   /* Hide the browser's default radio button */
-  .containerC input {
+.containerC input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-  }
+}
   
   /* Create a custom radio button */
-  .checkmark {
+.checkmark {
     position: absolute;
     top: -10px;
     left: 0;
@@ -156,15 +156,19 @@
     width: 25px;
     background-color: #eee;
     border-radius: 50%;
-  }
+}
   
   /* On mouse-over, add a grey background color */
-  .containerC:hover input ~ .checkmark {
+.containerC:hover input ~ .checkmark {
     background-color: #ccc;
-  }
+}
   
   /* When the radio button is checked, add a blue background */
-  .containerC input:checked ~ .checkmark {
+.containerC input:checked ~ .checkmark {
     background-color: #2196F3;
-  }
+}
+
+.chekedtrue {
+    background-color: #2196F3;
+}
   
