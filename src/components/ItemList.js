@@ -62,7 +62,7 @@ const reorder=(list,startIndex, endIndex)=>{
 }
 
 function ItemList() {
-    const {alls, selected} = useContext(FilterContext)
+    const {alls, selected, setSelected} = useContext(FilterContext)
     const[itemss,setItems]=useState(items);
     let arrayK=[]
     const keyValues=itemss.map((item)=>{
@@ -71,7 +71,18 @@ function ItemList() {
         }
         
     })
-   console.log(arrayK)
+    const handleSelectAll=()=>{
+     
+        
+          
+          setSelected('itemSelected')
+          setTimeout(()=>{
+            setSelected('')
+          },1000)
+          
+        
+        
+      }
    
    
     const handleChangeCheckState=(e,index)=>{
@@ -90,7 +101,7 @@ function ItemList() {
                    
                 <div className='headers'>
                         <h3 className="inovation fontStyle">{list}</h3>
-                        <p className="inovation2 fontStyle2">select all in {list}</p>
+                        <button className="inovation2 fontStyle2" type='button' onClick={handleSelectAll}>select all in {list}</button>
                         <h3 className="inovation2 fontStyle">Due Date(Optional)</h3>
                 </div>
                 <DragDropContext onDragEnd={(result)=>{
@@ -108,7 +119,8 @@ function ItemList() {
                 }}>
                     <Droppable droppableId={list+'s'}>{(droppableProvided)=>(
 
-                        <div {...droppableProvided.droppableProps} ref={droppableProvided.innerRef}>
+                        <div {...droppableProvided.droppableProps} 
+                        ref={droppableProvided.innerRef}>
                         
                                 
                             {itemss.map((item,index)=>{ 
