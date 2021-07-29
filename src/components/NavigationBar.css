@@ -15,7 +15,6 @@ ul {
 
 .all {
     height: 40px;
-    background: rgb(225, 225, 225);
     border: none;
     width: 165px;
     text-align: left;
@@ -34,4 +33,11 @@ ul {
     background: none;
     margin-top: 15px;
     font-size: 17px;
+    height: 40px;
+    width: 165px;
+}
+
+.but {
+    
+    background: rgb(225, 225, 225);
 }

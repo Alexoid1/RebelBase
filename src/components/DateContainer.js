@@ -1,9 +1,11 @@
-import {useState,React} from 'react';
+import {useState,useEffect,React} from 'react';
 import './DateContainer.css'
 
 function DateContainer({checked}) {
-    
-        return(
+ 
+        let dateC
+            if(checked){
+               dateC=(
                     <div className='dateContainer'>
                         <div>
                             <input className='date ' placeholder="MM-DD-YYY" type="date"></input>
@@ -11,7 +13,13 @@ function DateContainer({checked}) {
                         </div>
                     </div>
                  )
-            
+            }else{
+                dateC= (
+                    <div className='dateContainer'></div>
+                )
+            }
+        
+        return dateC;
 }
   
 export default DateContainer;

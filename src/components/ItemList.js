@@ -10,7 +10,7 @@ let items=[
     {
         name:"Problem",
         category: "Ideation",
-        checked:false,
+        checked: true,
         date:'00-00-00',
         time:'00:00'
 
@@ -18,28 +18,28 @@ let items=[
     {
         name:"Solution",
         category: "Ideation",
-        checked:false,
+        checked:true,
         date:'00-00-00',
         time:'00:00'
     },
     {
         name:"Team",
         category: "Ideation",
-        checked:false,
+        checked:true,
         date:'00-00-00',
         time:'00:00'
     },
     {
         name:"Ecosystem",
         category: "Validation",
-        checked:false,
+        checked:true,
         date:'00-00-00',
         time:'00:00'
     },
     {
         name:"Results",
         category: "Validation",
-        checked:false,
+        checked:true,
         date:'00-00-00',
         time:'00:00'
     }
@@ -62,24 +62,9 @@ function ItemList() {
    
     const handleChangeCheckState=(e,index)=>{
         let currentItems=itemss
-        console.log(currentItems[index].checked)
-        if(e.target.checked){
-            currentItems[index].checked=true
-            setItems(currentItems)
-            
-            
-         
-          
-        }else if(e.target.checked===false){
-                currentItems[index].checked=false
-            setItems(currentItems)
-            
-           
-           
-        }
-        
-
-       
+        console.log(currentItems[index].checked)   
+            currentItems[index].checked=e.target.checked
+            setItems([...currentItems])
     };
 
     return (
@@ -122,17 +107,18 @@ function ItemList() {
                                                                 handleChangeCheckState(e,index)}/>
 
                                                             <span className={'checkmark '+(item.checked?'chekedtrue':'chekedfalse')} />
-                                                        </label>
+                                                         </label>
                                                     </div>
                                                     <div className="cardBox">
                                                         <div>
                                                                 <h4>{item.name}</h4>
-                                                                <p className="viewLink">view builder</p>
+                                                               <p className="viewLink">view builder</p>
                                                             
                                                         </div>
                                                         <div className="greyBox"></div>
                                                         
                                                     </div>
+
                                                     <DateContainer checked={item.checked} />
                                                     
                                                     
