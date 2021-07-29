@@ -3,14 +3,28 @@ import {FilterContext} from '../contexts/FilterContext'
 import './NavigationBar.css'
 
 function NavigationBar() {
-    const {alls,setAlls} = useContext(FilterContext)
+    const {alls, setAlls, setSelected} = useContext(FilterContext)
+    const handleSelectAll=()=>{
+     
+      if(alls) {
+        setAlls(false)
+      }else {
+        setAlls(true)
+        setSelected('itemSelected')
+        setTimeout(()=>{
+          setSelected('')
+        },1000)
+        
+      } 
+      
+    }
     return (
       <div className="navigationBar">
           <nav>
             <ul className="navul">
               <li>
                 <button className={ alls ? 'all  but' : 'all'} 
-                onClick={(e)=>{alls ? setAlls(false) : setAlls(true)}} 
+                onClick={handleSelectAll} 
                 type="button">
                   All
                 </button>

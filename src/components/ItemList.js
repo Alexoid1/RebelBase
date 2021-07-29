@@ -57,9 +57,16 @@ const reorder=(list,startIndex, endIndex)=>{
 }
 
 function ItemList() {
-    const {alls,setAlls} = useContext(FilterContext)
+    const {alls, selected} = useContext(FilterContext)
     const[itemss,setItems]=useState(items);
-   console.log(alls,setAlls)
+    let arrayK=[]
+    const keyValues=itemss.map((item)=>{
+        if(!arrayK.includes(item.category)){
+            arrayK.push(item.category)
+        }
+        
+    })
+   console.log(arrayK)
    
    
     const handleChangeCheckState=(e,index)=>{
@@ -69,15 +76,88 @@ function ItemList() {
             setItems([...currentItems])
     };
 
-    return (
-        
+    const lists=(arrayK)=>{
 
-    <div className="itemContainer">
-        <h1 className="title fontStyle">Select Builder Schedule - 2019 Fall Cohort</h1>
-        <div className="boxContainer">
+        const jxEleme=arrayK.map((list)=>{
+            return (
+                <div>
+                
+                   
+                <div>
+                        <h3 className="inovation fontStyle">{list}</h3>
+                </div>
+                <DragDropContext onDragEnd={(result)=>{
+                    const {source, destination}=result;
+                    if(!destination){
+                        return;
+                    }
+                    if(source.index===destination.index&&source.droppableId===destination.droppableId){
+                        return;
+                    }
+                    setItems((prevItems)=>{
+                        return reorder(prevItems,source.index,destination.index)
+                    })
+
+                }}>
+                    <Droppable droppableId={list+'s'}>{(droppableProvided)=>(
+
+                        <div {...droppableProvided.droppableProps} ref={droppableProvided.innerRef}>
+                        
+                                
+                            {itemss.map((item,index)=>{
+                                if(item.category===list){return(
+                                    
+                                <Draggable key={item.name+' '+list} draggableId={item.name} index={index}>
+                                    {(draggableProvided)=>(
+                                        <div {...draggableProvided.draggableProps} 
+                                        ref={draggableProvided.innerRef} 
+                                        {...draggableProvided.dragHandleProps} 
+                                        className={'item '+ selected} >
+                                            <div>
+                                                <BsList  className="iconList"/>
+                                            </div>
+
+                                                <div>
+                                                    <label className="containerC">
+                                                        <input type="checkbox" onClick={(e)=>
+                                                            handleChangeCheckState(e,index)}/>
+
+                                                        <span className={'checkmark '+(item.checked?'chekedtrue':'chekedfalse')} />
+                                                    </label>
+                                                </div>
+                                                <div className="cardBox">
+                                                    <div>
+                                                            <h4>{item.name}</h4>
+                                                        <p className="viewLink">view builder</p>
+                                                            
+                                                    </div>
+                                                    <div className="greyBox"></div>
+                                                        
+                                                </div>
+
+                                                <DateContainer checked={item.checked} />                  
+                                            </div>
+                                        )
+                                    }
+                                </Draggable>)}})
+                            }
+                                {droppableProvided.placeholder}
+                        </div>
+                    )}
+                    </Droppable>
+                </DragDropContext> 
+        
+        </div>
+            )
+        })
+        return jxEleme
+    }
+    let filterElement
+    if(!alls){
+        filterElement=( 
             <div>
                 <div>
-                    <h3 className="inovation fontStyle">Social Innovation</h3>
+                        <h3 className="inovation fontStyle">Social Innovation</h3>
                 </div>
                 <DragDropContext onDragEnd={(result)=>{
                     const {source, destination}=result;
@@ -98,46 +178,56 @@ function ItemList() {
                         
                                 
                                 {itemss.map((item,index)=>(
-                                    <Draggable key={item.name+index} draggableId={item.name} index={index}>
+                                    <Draggable key={item.name+index} draggableId={item.name} index={index} >
                                         {(draggableProvided)=>(
-                                            <div {...draggableProvided.draggableProps} ref={draggableProvided.innerRef} {...draggableProvided.dragHandleProps} className="item" >
+                                            <div {...draggableProvided.draggableProps} 
+                                            ref={draggableProvided.innerRef} 
+                                            {...draggableProvided.dragHandleProps} 
+                                            className={'item ' + selected} >
                                                     <div>
                                                         <BsList  className="iconList"/>
                                                     </div>
+
                                                     <div>
                                                         <label className="containerC">
                                                             <input type="checkbox" onClick={(e)=>
                                                                 handleChangeCheckState(e,index)}/>
 
                                                             <span className={'checkmark '+(item.checked?'chekedtrue':'chekedfalse')} />
-                                                         </label>
+                                                        </label>
                                                     </div>
                                                     <div className="cardBox">
                                                         <div>
                                                                 <h4>{item.name}</h4>
-                                                               <p className="viewLink">view builder</p>
+                                                            <p className="viewLink">view builder</p>
                                                             
                                                         </div>
                                                         <div className="greyBox"></div>
                                                         
                                                     </div>
 
-                                                    <DateContainer checked={item.checked} />
-                                                    
-                                                    
-                                                
+                                                    <DateContainer checked={item.checked} />                  
                                             </div>
                                         )}
                                     </Draggable>
-                                    
                                 ))}
                                 {droppableProvided.placeholder}
                             </div>)}
                     </Droppable>
-                </DragDropContext>    
-                
-            </div>  
+                </DragDropContext> 
+            </div>    )
+    }else{
+        filterElement= lists(arrayK)
+    }
 
+        
+    return(
+    <div className="itemContainer">
+        <h1 className="title fontStyle">Select Builder Schedule - 2019 Fall Cohort</h1>
+        <div className="boxContainer">
+            <div>    
+                      {filterElement}    
+            </div>  
         </div>
     </div>
   
