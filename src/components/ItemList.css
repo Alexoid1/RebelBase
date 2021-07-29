@@ -47,14 +47,14 @@
     height: 75px;
     margin-bottom: 32px;
     display: flex;
-    display: row;
+    flex: row;
     align-items: center;
-   
-
 }
 
-
-
+.item2{
+    display: flex;
+    flex: row;
+}
 
 .iconList {
     color: rgb(213, 213, 216);
