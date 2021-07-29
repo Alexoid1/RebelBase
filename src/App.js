@@ -1,13 +1,17 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import NavigationBar from './components/NavigationBar';
 import ItemList from './components/ItemList';
+import {FilterContext} from './contexts/FilterContext'
 import './App.css';
 
 function App() {
+  const [alls,setAlls]=useState(true);
   return (
     <div className="App">
-      <NavigationBar/>
-      <ItemList/>
+      <FilterContext.Provider value={{alls,setAlls}}>
+        <NavigationBar/>
+        <ItemList/>
+      </FilterContext.Provider>
     </div>
   );
 }

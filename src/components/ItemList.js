@@ -1,7 +1,8 @@
-import {useState,React} from 'react';
+import React,{useState,useContext} from 'react';
 import { BsList } from 'react-icons/bs';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import DateContainer from './DateContainer'
+import DateContainer from './DateContainer';
+import {FilterContext} from '../contexts/FilterContext'
 import './ItemList.css' 
 
 
@@ -56,8 +57,9 @@ const reorder=(list,startIndex, endIndex)=>{
 }
 
 function ItemList() {
+    const {alls,setAlls} = useContext(FilterContext)
     const[itemss,setItems]=useState(items);
-   
+   console.log(alls,setAlls)
    
    
     const handleChangeCheckState=(e,index)=>{
@@ -68,6 +70,7 @@ function ItemList() {
     };
 
     return (
+        
 
     <div className="itemContainer">
         <h1 className="title fontStyle">Select Builder Schedule - 2019 Fall Cohort</h1>
