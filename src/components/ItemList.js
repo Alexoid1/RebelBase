@@ -13,7 +13,8 @@ let items=[
         category: "Ideation",
         checked: true,
         date:'00-00-00',
-        time:'00:00'
+        time:'00:00',
+        id:1
 
     },
     {
@@ -21,28 +22,32 @@ let items=[
         category: "Ideation",
         checked:true,
         date:'00-00-00',
-        time:'00:00'
+        time:'00:00',
+        id:2
     },
     {
         name:"Team",
         category: "Ideation",
         checked:true,
         date:'00-00-00',
-        time:'00:00'
+        time:'00:00',
+        id:3
     },
     {
         name:"Ecosystem",
         category: "Validation",
         checked:true,
         date:'00-00-00',
-        time:'00:00'
+        time:'00:00',
+        id:4
     },
     {
         name:"Results",
         category: "Validation",
         checked:true,
         date:'00-00-00',
-        time:'00:00'
+        time:'00:00',
+        id:5
     }
 
 
@@ -71,9 +76,9 @@ function ItemList() {
    
     const handleChangeCheckState=(e,index)=>{
         let currentItems=itemss
-        console.log(currentItems[index].checked)   
-            currentItems[index].checked=e.target.checked
-            setItems([...currentItems])
+        
+        currentItems[index].checked=e.target.checked
+        setItems([...currentItems])
     };
 
     const lists=(arrayK)=>{
@@ -83,8 +88,10 @@ function ItemList() {
                 <div>
                 
                    
-                <div>
+                <div className='headers'>
                         <h3 className="inovation fontStyle">{list}</h3>
+                        <p className="inovation2 fontStyle2">select all in {list}</p>
+                        <h3 className="inovation2 fontStyle">Due Date(Optional)</h3>
                 </div>
                 <DragDropContext onDragEnd={(result)=>{
                     const {source, destination}=result;
@@ -104,8 +111,12 @@ function ItemList() {
                         <div {...droppableProvided.droppableProps} ref={droppableProvided.innerRef}>
                         
                                 
-                            {itemss.map((item,index)=>{
-                                if(item.category===list){return(
+                            {itemss.map((item,index)=>{ 
+                                
+                                if(item.category===list){
+                                    let count=-1
+                                    count++
+                                    return(
                                     
                                 <Draggable key={item.name+' '+list} draggableId={item.name} index={index}>
                                     {(draggableProvided)=>(
@@ -113,9 +124,7 @@ function ItemList() {
                                         ref={draggableProvided.innerRef} 
                                         {...draggableProvided.dragHandleProps} 
                                         className={'item '+ selected} >
-                                            <div>
-                                                <BsList  className="iconList"/>
-                                            </div>
+                                            
 
                                                 <div>
                                                     <label className="containerC">
@@ -135,11 +144,18 @@ function ItemList() {
                                                         
                                                 </div>
 
-                                                <DateContainer date={item.date} time={item.time} checked={item.checked} />                  
+                                                <DateContainer 
+                                                date={item.date} 
+                                                time={item.time} 
+                                                checked={item.checked} 
+                                                items={itemss}
+                                                index={count}
+                                                 />                  
                                             </div>
                                         )
                                     }
                                 </Draggable>)}})
+                                
                             }
                                 {droppableProvided.placeholder}
                         </div>
@@ -156,8 +172,9 @@ function ItemList() {
     if(!alls){
         filterElement=( 
             <div>
-                <div>
+                <div className='headers'>
                         <h3 className="inovation fontStyle">Social Innovation</h3>
+                        <h3 className="inovation2 fontStyle">Due Date(Optional)</h3>
                 </div>
                 <DragDropContext onDragEnd={(result)=>{
                     const {source, destination}=result;
@@ -206,7 +223,13 @@ function ItemList() {
                                                         
                                                     </div>
 
-                                                    <DateContainer date={item.date} time={item.time} checked={item.checked} />                  
+                                                    <DateContainer 
+                                                    date={item.date} 
+                                                    time={item.time} 
+                                                    checked={item.checked}
+                                                    items={itemss}
+                                                    index={index}
+                                                     />                  
                                             </div>
                                         )}
                                     </Draggable>
