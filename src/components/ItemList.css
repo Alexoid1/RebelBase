@@ -1,6 +1,7 @@
 .itemContainer { 
     width: 80%;
     margin-left: 10px;
+    height: 700px;
 }
 
 .title {
@@ -152,8 +153,37 @@
 }
 
 .itemSelected {
-    
     background: rgba(0, 217, 255, 0.267);
     z-index:50;
 }
 
+.buttonsContainer {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.buttonsContainer button {
+    height: 20px;
+    border:none;
+    font-family: Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: thin;
+    border-radius: 2px;
+    
+}
+
+.use {
+    width: 120px;
+    background: rgb(34,116,165);
+    color: white;
+    margin-left: 11px;
+}
+
+.use:hover {
+    background: rgb(26, 75, 148);
+}
+
+.cancel {
+    color: #6A6B6B;
+    background: none;
+}

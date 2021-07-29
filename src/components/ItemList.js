@@ -135,7 +135,7 @@ function ItemList() {
                                                         
                                                 </div>
 
-                                                <DateContainer checked={item.checked} />                  
+                                                <DateContainer date={item.date} time={item.time} checked={item.checked} />                  
                                             </div>
                                         )
                                     }
@@ -206,7 +206,7 @@ function ItemList() {
                                                         
                                                     </div>
 
-                                                    <DateContainer checked={item.checked} />                  
+                                                    <DateContainer date={item.date} time={item.time} checked={item.checked} />                  
                                             </div>
                                         )}
                                     </Draggable>
@@ -227,7 +227,16 @@ function ItemList() {
         <div className="boxContainer">
             <div>    
                       {filterElement}    
-            </div>  
+            </div>
+            
+        </div>
+        <div className='buttonsContainer'>
+            <button className='cancel' type='button'>
+                Cancel
+            </button>
+            <button className='use' type='button'>
+                use this builder scheduler
+            </button>
         </div>
     </div>
   
