@@ -12,7 +12,7 @@ let items=[
         name:"Problem",
         category: "Ideation",
         checked: true,
-        date:'00-00-00',
+        date:'',
         time:'00:00',
         id:1
 
@@ -21,7 +21,7 @@ let items=[
         name:"Solution",
         category: "Ideation",
         checked:true,
-        date:'00-00-00',
+        date:'',
         time:'00:00',
         id:2
     },
@@ -29,7 +29,7 @@ let items=[
         name:"Team",
         category: "Ideation",
         checked:true,
-        date:'00-00-00',
+        date:'',
         time:'00:00',
         id:3
     },
@@ -37,7 +37,7 @@ let items=[
         name:"Ecosystem",
         category: "Validation",
         checked:true,
-        date:'00-00-00',
+        date:'',
         time:'00:00',
         id:4
     },
@@ -45,7 +45,7 @@ let items=[
         name:"Results",
         category: "Validation",
         checked:true,
-        date:'00-00-00',
+        date:'',
         time:'00:00',
         id:5
     }
@@ -65,13 +65,23 @@ function ItemList() {
     const {alls, selected, setSelected} = useContext(FilterContext)
     const[itemss,setItems]=useState(items);
     const[activeb,setActive]=useState(true);
-    let arrayK=[]
-    const keyValues=itemss.map((item)=>{
-        if(!arrayK.includes(item.category)){
-            arrayK.push(item.category)
-        }
-        
-    })
+    const arrayO=()=>{
+        let arrayK=[]
+        let oj={}  
+           
+        itemss.map((item)=>{
+          
+            if(!oj[item.category]){
+                oj[item.category]=1
+                return arrayK.push(item.category)
+            }else {
+                return null
+            }
+        })
+        return arrayK
+
+    }
+    
     const handleSelectAll=()=>{
           setSelected('itemSelected')
           setTimeout(()=>{
@@ -99,7 +109,7 @@ function ItemList() {
 
         const jxEleme=arrayK.map((list)=>{
             return (
-                <div>
+                <div key={list}>
                 
                    
                 <div className='headers'>
@@ -260,7 +270,7 @@ function ItemList() {
                 </DragDropContext> 
             </div>    )
     }else{
-        filterElement= lists(arrayK)
+        filterElement= lists(arrayO())
     }
 
         
