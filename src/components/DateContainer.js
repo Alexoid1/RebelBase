@@ -38,7 +38,7 @@ function DateContainer({date,time,checked,items,index}) {
                  )
             }else{
                 dateC= (
-                    <div className='dateContainer'></div>
+                    <div className='dateContainer hideElement'></div>
                 )
             }
         

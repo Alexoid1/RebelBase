@@ -1,5 +1,5 @@
 import React,{useState,useContext} from 'react';
-import { BsList } from 'react-icons/bs';
+import { BsList,BsFillTriangleFill } from 'react-icons/bs';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import DateContainer from './DateContainer';
 import {FilterContext} from '../contexts/FilterContext'
@@ -154,7 +154,9 @@ function ItemList() {
                                                             <p className="viewLink">view builder</p>
                                                                 
                                                         </div>
-                                                        <div className="greyBox"></div>
+                                                        <div className="greyBox">
+                                                            <BsFillTriangleFill className={'triangle '+(item.checked?'triRed':'triGrey')}/>
+                                                        </div>
                                                             
                                                     </div>
                                                 
@@ -233,7 +235,9 @@ function ItemList() {
                                                                 <p className="viewLink">view builder</p>
                                                                 
                                                             </div>
-                                                            <div className="greyBox"></div>
+                                                            <div className="greyBox">
+                                                                <BsFillTriangleFill className={'triangle '+(item.checked?'triRed':'triGrey')} />
+                                                            </div>
                                                             
                                                         </div>
                                                     
@@ -269,7 +273,7 @@ function ItemList() {
             </div>
             
         </div>
-        <div className='buttonsContainer'>
+        <div className='buttonsContainer hideElement'>
             <button className='cancel' type='button'>
                 Cancel
             </button>

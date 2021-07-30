@@ -7,7 +7,7 @@ function NavigationBar() {
     const handleSelectAll=()=>{
      
       if(alls) {
-        return
+        setAlls(false)
       }else {
         setAlls(true)
         setSelected('itemSelected')
