@@ -2,10 +2,12 @@
   "name": "rebel-base",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alexoid1.github.io/RebelBase/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-beautiful-dnd": "^13.1.0",
     "react-datepicker": "^4.1.1",
@@ -17,6 +19,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "deploy":"npm run build&&gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
