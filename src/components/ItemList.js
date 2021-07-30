@@ -64,6 +64,7 @@ const reorder=(list,startIndex, endIndex)=>{
 function ItemList() {
     const {alls, selected, setSelected} = useContext(FilterContext)
     const[itemss,setItems]=useState(items);
+    const[activeb,setActive]=useState(true);
     let arrayK=[]
     const keyValues=itemss.map((item)=>{
         if(!arrayK.includes(item.category)){
@@ -72,24 +73,26 @@ function ItemList() {
         
     })
     const handleSelectAll=()=>{
-     
-        
-          
           setSelected('itemSelected')
           setTimeout(()=>{
             setSelected('')
           },1000)
-          
-        
-        
+           
       }
-   
    
     const handleChangeCheckState=(e,index)=>{
         let currentItems=itemss
+        if(activeb){
+            currentItems[index].checked=false
+            setActive(false)
+            setItems([...currentItems])
+        }else{
+            currentItems[index].checked=true
+            setActive(true)
+            setItems([...currentItems])
+        }
         
-        currentItems[index].checked=e.target.checked
-        setItems([...currentItems])
+        
     };
 
     const lists=(arrayK)=>{
@@ -102,7 +105,7 @@ function ItemList() {
                 <div className='headers'>
                         <h3 className="inovation fontStyle">{list}</h3>
                         <button className="inovation2 fontStyle2" type='button' onClick={handleSelectAll}>select all in {list}</button>
-                        <h3 className="inovation2 fontStyle">Due Date(Optional)</h3>
+                        <h3 className="inovation2 fontStyle hideElement">Due Date(Optional)</h3>
                 </div>
                 <DragDropContext onDragEnd={(result)=>{
                     const {source, destination}=result;
@@ -130,31 +133,31 @@ function ItemList() {
                                     count++
                                     return(
                                     
-                                <Draggable key={item.name+' '+list} draggableId={item.name} index={index}>
+                                <Draggable key={item.name+list} draggableId={item.name} index={index}>
                                     {(draggableProvided)=>(
                                         <div {...draggableProvided.draggableProps} 
                                         ref={draggableProvided.innerRef} 
                                         {...draggableProvided.dragHandleProps} 
                                         className={'item '+ selected} >
                                             
+                                                    <div className='item2 hideElement'>
+                                                            <label className="containerC">
+                                                                <input type="checkbox" onClick={(e)=>
+                                                                    handleChangeCheckState(e,index)}/>
 
-                                                <div>
-                                                    <label className="containerC">
-                                                        <input type="checkbox" onClick={(e)=>
-                                                            handleChangeCheckState(e,index)}/>
-
-                                                        <span className={'checkmark '+(item.checked?'chekedtrue':'chekedfalse')} />
-                                                    </label>
-                                                </div>
-                                                <div className="cardBox">
-                                                    <div>
-                                                            <h4>{item.name}</h4>
-                                                        <p className="viewLink">view builder</p>
+                                                                <span className={'checkmark '+(item.checked?'chekedtrue':'chekedfalse')} />
+                                                            </label>
+                                                    </div>
+                                                    <div className={'cardBox ' + (activeb ? 'borderCardBoxOn' : 'borderCardBoxOff') }>
+                                                        <div>
+                                                                <h4>{item.name}</h4>
+                                                            <p className="viewLink">view builder</p>
+                                                                
+                                                        </div>
+                                                        <div className="greyBox"></div>
                                                             
                                                     </div>
-                                                    <div className="greyBox"></div>
-                                                        
-                                                </div>
+                                                
 
                                                 <DateContainer 
                                                 date={item.date} 
@@ -186,7 +189,7 @@ function ItemList() {
             <div>
                 <div className='headers'>
                         <h3 className="inovation fontStyle">Social Innovation</h3>
-                        <h3 className="inovation2 fontStyle">Due Date(Optional)</h3>
+                        <h3 className="inovation2 fontStyle hideElement">Due Date(Optional)</h3>
                 </div>
                 <DragDropContext onDragEnd={(result)=>{
                     const {source, destination}=result;
@@ -213,11 +216,10 @@ function ItemList() {
                                             ref={draggableProvided.innerRef} 
                                             {...draggableProvided.dragHandleProps} 
                                             className={'item ' + selected} >
-                                                    <div>
+                                                    <div className='hideElement'>
                                                         <BsList  className="iconList"/>
                                                     </div>
-
-                                                    <div>
+                                                    <div className='item2 hideElement'>
                                                         <label className="containerC">
                                                             <input type="checkbox" onClick={(e)=>
                                                                 handleChangeCheckState(e,index)}/>
@@ -225,17 +227,19 @@ function ItemList() {
                                                             <span className={'checkmark '+(item.checked?'chekedtrue':'chekedfalse')} />
                                                         </label>
                                                     </div>
-                                                    <div className="cardBox">
-                                                        <div>
-                                                                <h4>{item.name}</h4>
-                                                            <p className="viewLink">view builder</p>
+                                                        <div className={'cardBox ' + (activeb ? 'borderCardBoxOn':'borderCardBoxOff')}>
+                                                            <div>
+                                                                    <h4>{item.name}</h4>
+                                                                <p className="viewLink">view builder</p>
+                                                                
+                                                            </div>
+                                                            <div className="greyBox"></div>
                                                             
                                                         </div>
-                                                        <div className="greyBox"></div>
-                                                        
-                                                    </div>
+                                                    
 
                                                     <DateContainer 
+                                                    
                                                     date={item.date} 
                                                     time={item.time} 
                                                     checked={item.checked}

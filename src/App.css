@@ -1,5 +1,4 @@
 .App {
-  width: 100%;
   height: 90%;
   margin: 80px auto;
   padding: 0 0 70px;
@@ -16,30 +15,116 @@
 
 
 body {
-  margin: auto;
+  text-align: center;
   background: rgb(131,145,146);
+  
 }
 
 #root {
-  width: 80%;
+  width: 100%;
   height: 100%;
   margin: auto;
-  max-width: 1250px;
+
 }
 
-@media (max-width: 680px) {
-  #root {
-    padding: 20px;
-  }
+.title3 {
+  display:none;
 }
 
-@media (max-width: 380px) {
-  #root {
-    width: 100%;
-    padding: 0;
+@media (max-width: 550px) {
+   
+  #root{
+    display:flex;
+    justify-content: center;
   }
-
+  
   .App {
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column; 
+    width: 350px;
+    height: auto;
     padding: 0;
   }
+
+  .title {
+    display:none;
+    
+  }
+
+  .navigationBar{
+   width: 350px;
+   display: block;
+    height: 200px;
+  }
+
+  .itemContainer { 
+    width: 350px;  
+    height: auto;
+  }
+  .navul{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .title3 {
+    display: inline-block;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 520;
+    letter-spacing: 1px;
+    font-family: 'Chakra Petch', sans-serif;
+    margin-top: 40px;
+    width: 210px;
+  }
+
+  .temple {
+    display: none;
+  }
+
+  .all {
+    width: 85px;
+    height: 25px;
+    padding: 0px;
+  }
+  .dropSelect{
+    display: block;
+    margin-left:5px;
+  }
+
+  .buttonHide {
+    display: block;
+    text-align: right;
+  }
+
+
+  .use {
+    height: 20px;
+    border:none;
+    font-family: Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: thin;
+    border-radius: 2px;
+    text-align: center;
+    margin-right: 18px;
+  }
+
+  .hideElement {
+    display: none
+  }
+
+  .boxContainer {
+    width: 330px;
+    height: auto;
+  }
+  
+  
 }
+
+

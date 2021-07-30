@@ -49,11 +49,16 @@
     display: flex;
     flex: row;
     align-items: center;
+    
 }
 
 .item2{
     display: flex;
     flex: row;
+    align-items: center;
+    background: none;
+    border:none;
+    z-index:50;
 }
 
 .iconList {
@@ -81,13 +86,20 @@
 .cardBox {
     height: 75px;
     width: 300px;
-    border: 2px solid #A9ECF3;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     box-shadow: 5px 5px 5px rgba(181, 179, 179, 0.72);
+}
+
+.borderCardBoxOn {
+    border: 2px solid #A9ECF3;
+}
+
+.borderCardBoxOff {
+    border: 2px solid rgb(201, 206, 206);
 }
 
 .cardBox div {
@@ -149,16 +161,7 @@
     background-color: #eee;
     border-radius: 50%;
 }
-  
-  /* On mouse-over, add a grey background color */
-.containerC:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-  
-  /* When the radio button is checked, add a blue background */
-.containerC input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
+
 
 .chekedtrue {
     background-color: #2196F3;
@@ -166,7 +169,6 @@
 
 .itemSelected {
     background: rgba(0, 217, 255, 0.267);
-    z-index:50;
 }
 
 .buttonsContainer {

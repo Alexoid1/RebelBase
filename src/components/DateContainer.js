@@ -1,4 +1,4 @@
-import {useState,useEffect,React} from 'react';
+import {useState,React} from 'react';
 import './DateContainer.css'
 
 function DateContainer({date,time,checked,items,index}) {
@@ -29,7 +29,7 @@ function DateContainer({date,time,checked,items,index}) {
         let dateC
             if(checked){
                dateC=(
-                    <div className='dateContainer'>
+                    <div className='dateContainer hideElement'>
                         <div>
                             <input className='date '  value={currentDate} placeholder="MM-DD-YYY" onChange={e=>handleDateChange(e)} type="date"></input>
                             <input className='hour ' value={currentTime} onChange={e=>handleTimeChange(e)} type="time"></input>

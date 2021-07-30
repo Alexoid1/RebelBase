@@ -3,7 +3,7 @@
     width: 220px;
 }
 
-ul {
+.navul {
     list-style: none;
     margin-top: 90px;
     padding: 0;
@@ -38,6 +38,10 @@ ul {
 }
 
 .but {
-    
     background: rgb(225, 225, 225);
 }
+
+.dropSelect,.buttonHide {
+    display: none;
+}
+

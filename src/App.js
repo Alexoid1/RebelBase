@@ -9,7 +9,9 @@ function App() {
   const [selected,setSelected]=useState('');
   return (
     <div className="App">
+       
       <FilterContext.Provider value={{alls,setAlls,selected,setSelected}}>
+       
         <NavigationBar/>
         <ItemList/>
       </FilterContext.Provider>
