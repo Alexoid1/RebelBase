@@ -8,7 +8,7 @@ function DateContainer({date,time,checked,items,index}) {
     const handleDateChange=(e)=>{
         
         let currentItems=ites
-        console.log(e.target.value)
+        
         currentItems[index].date=e.target.value
         setCurrentDate(e.target.value)
         setItes([...currentItems])
