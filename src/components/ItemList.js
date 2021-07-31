@@ -181,7 +181,10 @@ function ItemList() {
                                             </div>
                                         )
                                     }
-                                </Draggable>)}})
+                                </Draggable>)}
+                                else {
+                                return null
+                            }})
                                 
                             }
                                 {droppableProvided.placeholder}
