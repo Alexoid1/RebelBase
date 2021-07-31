@@ -4,6 +4,7 @@ import './DateContainer.css'
 function DateContainer({date,time,checked,items,index}) {
     const[currentDate,setCurrentDate]=useState(date);
     const[currentTime,setCurrentTime]=useState(time);
+
     const [ites,setItes]=useState(items)
     const handleDateChange=(e)=>{
         
@@ -27,20 +28,16 @@ function DateContainer({date,time,checked,items,index}) {
 
     }
         let dateC
-            if(checked){
+            
                dateC=(
                     <div className='dateContainer hideElement'>
-                        <div>
+                        <div className={!checked?'msgUn':''}> 
                             <input className='date '  value={currentDate}  onChange={e=>handleDateChange(e)} type="date"></input>
                             <input className='hour ' value={currentTime} onChange={e=>handleTimeChange(e)} type="time"></input>
                         </div>
                     </div>
                  )
-            }else{
-                dateC= (
-                    <div className='dateContainer hideElement'></div>
-                )
-            }
+            
         
         return dateC;
 }

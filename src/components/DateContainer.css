@@ -31,5 +31,7 @@
 .msgUn {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+    transform: translateX(-30px);
+    transition: visibility 0s linear 0.53s, opacity 0.33s linear, transform 0.5s linear;
 }
+
