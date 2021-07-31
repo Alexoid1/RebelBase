@@ -6,8 +6,8 @@ function DateContainer({date,time,checked,items,index}) {
     const[currentTime,setCurrentTime]=useState(time);
     const [ites,setItes]=useState(items)
     const handleDateChange=(e)=>{
-        console.log(typeof(e.target.value))
-        let currentItems=items
+        
+        let currentItems=ites
         
         currentItems[index].date=e.target.value
         setCurrentDate(e.target.value)
@@ -17,7 +17,7 @@ function DateContainer({date,time,checked,items,index}) {
     }
 
     const handleTimeChange=(e)=>{
-        console.log(typeof(e.target.value))
+        
         let currentItems=items
         
         currentItems[index].time=e.target.value
@@ -31,7 +31,7 @@ function DateContainer({date,time,checked,items,index}) {
                dateC=(
                     <div className='dateContainer hideElement'>
                         <div>
-                            <input className='date '  value={currentDate} placeholder="MM-DD-YYY" onChange={e=>handleDateChange(e)} type="date"></input>
+                            <input className='date '  value={currentDate}  onChange={e=>handleDateChange(e)} type="date"></input>
                             <input className='hour ' value={currentTime} onChange={e=>handleTimeChange(e)} type="time"></input>
                         </div>
                     </div>

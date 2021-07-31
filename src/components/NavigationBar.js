@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react';
+import React,{useContext} from 'react';
 import {FilterContext} from '../contexts/FilterContext'
 import './NavigationBar.css'
 
