@@ -31,11 +31,11 @@ function DateContainer({date,time,checked,items,index}) {
             
                dateC=(
                     <div className='dateContainer hideElement'>
-                        <div className={!checked?'msgUn':''}> 
+                        <div className={!checked?'msgUn':'msgCheck'}> 
                             <input className='date '  value={currentDate}  onChange={e=>handleDateChange(e)} type="date"></input>
                             <input className='hour ' value={currentTime} onChange={e=>handleTimeChange(e)} type="time"></input>
                         </div>
-                    </div>
+                    </div>  
                  )
             
         
