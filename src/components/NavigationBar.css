@@ -1,0 +1,47 @@
+.navigationBar {
+    background: white;
+    width: 220px;
+}
+
+.navul {
+    list-style: none;
+    margin-top: 90px;
+    padding: 0;
+}
+
+.navul li {
+    text-align: center;
+}
+
+.all {
+    height: 40px;
+    border: none;
+    width: 165px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.temple {
+    color:rgb(205,204,205);
+    font-size: 15px;
+    margin: 0 0 0 30px;
+    text-align: left;
+}
+
+.social {
+    border: none;
+    background: none;
+    margin-top: 15px;
+    font-size: 17px;
+    height: 40px;
+    width: 165px;
+}
+
+.but {
+    background: rgb(197, 193, 193);
+}
+
+.dropSelect,.buttonHide {
+    display: none;
+}
+

@@ -1,0 +1,68 @@
+.dateContainer {
+    margin-left: 105px;
+    
+}
+
+.dateContainer .date {
+    width: 101px;
+    height: 27px;
+    border: 2px solid rgb(238,238,238);
+    
+}
+
+.date::-webkit-datetime-edit-month-field { 
+    color: grey; 
+    font-size: 15px;
+}
+    
+.date::-webkit-datetime-edit-day-field { 
+    color: grey; 
+}
+
+.date::-webkit-datetime-edit-year-field { 
+    color: grey; 
+}
+
+.date::-webkit-calendar-picker-indicator { 
+    color: grey; 
+    width: 20px;
+}
+
+.hour::-webkit-datetime-edit-month-field { 
+    color: grey; 
+    font-size: 15px;
+}
+    
+.hour::-webkit-datetime-edit-day-field { 
+    color: grey; 
+}
+
+.hour::-webkit-datetime-edit-year-field { 
+    color: grey; 
+}
+
+.hour::-webkit-calendar-picker-indicator { 
+    color: grey; 
+    width: 20px;
+}
+
+.dateContainer .hour {
+    width: 83px;
+    height: 27px;
+    border: 2px solid rgb(238,238,238);
+    margin-left: 3px;
+}
+
+.msgCheck {
+    visibility: visible;
+    opacity: 1;     
+    transition-delay: 0s;
+}
+
+.msgUn {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: visibility 0s linear 0.53s, opacity 0.33s linear, transform 0.5s linear;
+}
+

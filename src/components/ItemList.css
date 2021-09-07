@@ -1,0 +1,231 @@
+.itemContainer { 
+    width: 100%;
+    margin-left: 10px;
+    height: 700px;
+}
+
+.title {
+    font-size: 23px;
+    font-weight: 520;
+    letter-spacing: 1px;
+    margin: 26px 0 20px 16px;
+}
+
+.fontStyle{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(95,114,115);
+}
+
+.fontStyle2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #23cfdf;
+    border:none;
+    background: none;
+}
+
+.boxContainer {
+    width: 805px;
+    height: 600px;
+    border: 2px solid rgb(241,242,242);
+    Overflow-x:scroll;
+
+}
+
+.inovation {
+    font-size: 17px;
+    font-weight: medium;
+    margin: 22px 10px 33px;
+}
+
+
+.triangle {
+    
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.triRed {
+    color:crimson;
+}
+
+.triGrey {
+    color:rgb(117, 116, 116);
+}
+
+
+
+.inovation2 {
+    font-size: 12px;
+    font-weight: medium;
+    margin: 22px 10px 33px;
+}
+
+.item {
+    height: 75px;
+    margin-bottom: 32px;
+    display: flex;
+    flex: row;
+    align-items: center;
+    
+}
+
+.item2{
+    display: flex;
+    flex: row;
+    align-items: center;
+    background: none;
+    border:none;
+    z-index:50;
+}
+
+.iconList {
+    color: rgb(213, 213, 216);
+    font-size: 30px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.iconList:hover {
+    color: cadetblue;
+}
+
+.iconCircle {
+    font-size: 20px;
+    text-align: left;
+    margin: 0 37px 0 30px ;
+    color: #1FAEBC;
+}
+
+.iconCircle:hover {
+    color: #23cfdf;
+}
+
+.cardBox {
+    height: 75px;
+    width: 300px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgba(181, 179, 179, 0.72);
+}
+
+.borderCardBoxOn {
+    border: 2px solid #A9ECF3;
+}
+
+.borderCardBoxOff {
+    border: 2px solid rgb(201, 206, 206);
+}
+
+.cardBox div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardBox div h4 {
+    font-size: 14px;
+    color: rgb(95,114,115);
+    text-align: left;
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: 2px;
+    font-weight: medium;
+    margin: 10px 13px;
+}
+
+.viewLink {
+    font-size: 12px;
+    color: rgb(0, 145, 255);
+    text-align: left;
+    margin-left: 20px;
+}
+
+.greyBox {
+    background: rgb(161, 159, 159);
+    height: 48px;
+    width: 73px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.containerC {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin: 0 20px 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+  /* Hide the browser's default radio button */
+.containerC input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+  /* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+
+.chekedtrue {
+    background-color: #2196F3;
+}
+
+.itemSelected {
+    background: rgba(0, 217, 255, 0.267);
+}
+
+.buttonsContainer {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.buttonsContainer button {
+    height: 20px;
+    border:none;
+    font-family: Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: thin;
+    border-radius: 2px;
+    
+}
+
+.headers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.use {
+    width: 120px;
+    background: rgb(34,116,165);
+    color: white;
+    margin-left: 11px;
+}
+
+.use:hover {
+    background: rgb(26, 75, 148);
+}
+
+.cancel {
+    color: #6A6B6B;
+    background: none;
+}
