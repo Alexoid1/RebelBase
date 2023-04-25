@@ -1,7 +1,7 @@
 # React RebelBase
 
 
-![screenshot](./public/ScreenShot.png)
+![screenshot](./public/Screenshot.png)
 
 
 
